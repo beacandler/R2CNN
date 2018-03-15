@@ -1,0 +1,22 @@
+services:
+  rrcnn:
+    build: .
+    devices:
+    - /dev/nvidia0
+    - /dev/nvidia1
+    - /dev/nvidiactl
+    - /dev/nvidia-uvm
+    - /dev/nvidia-uvm-tools
+    image: rrcnn:latest
+    ports:
+    - 9099:9099
+    volumes:
+    - .:/app
+    - /mnt/data:/mnt/data
+    - /etc/localtime:/etc/localtime:ro
+    - /tmp/.X11-unix:/tmp/.X11-unix
+    - nvidia_driver_384.111:/usr/local/nvidia:ro
+version: '2'
+volumes:
+  nvidia_driver_384.111:
+    external: true

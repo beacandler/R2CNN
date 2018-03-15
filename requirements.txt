@@ -1,0 +1,7 @@
+easydict
+shapely
+Polygon
+matplotlib
+scikit-image
+thrift
+cython

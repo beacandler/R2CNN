@@ -1,0 +1,32 @@
+EXP_DIR: faster_rcnn_end2end
+TRAIN:
+  HAS_RPN: True
+  IMS_PER_BATCH: 1
+  BBOX_NORMALIZE_TARGETS_PRECOMPUTED: True
+  RPN_POSITIVE_OVERLAP: 0.7
+  RPN_BATCHSIZE: 256
+  PROPOSAL_METHOD: gt
+  BG_THRESH_LO: 0.0
+
+  SNAPSHOT_ITERS: 20
+  AGNOSTIC: True # can avoid VisibleDeprecationWarning: using a non-integer number in bbox_targets[] ind(start, end) is a float
+  BATCH_SIZE: 128 # can avoid VisibleDeprecationWarning: using a non-integer number in fg_rois_per_this_image is a float
+
+  # new added by hc
+  USE_FLIPPED: False # only for icdar15 data
+  USE_FLIPPED_QUAD: False #if flipped, reverse quad rather than rectangle,modify in imdb.py/append_flipped_images function to flip image
+  USE_DIFF: False
+  MORE_SINGLE_CHAR: True
+
+  MAX_SIZE: 1280
+
+TEST:
+  HAS_RPN: True
+  MAX_SIZE: 5000
+  BBOX_REG: False
+  INCLINED_RECT_REG: True
+  USE_INCLINED_NMS: True
+  NMS: 0.1
+#  SCALES: [720, 600, 1200]
+#  SCALES: [720, 1200]
+#  MULTI_SCALES_NOC: True

@@ -1,0 +1,12 @@
+version: '2'
+services:
+  rrcnn:
+    build: .
+    image: rrcnn:latest
+    ports:
+    - 9099:9099
+    volumes:
+    - .:/app
+    - /mnt/data:/mnt/data
+    - /etc/localtime:/etc/localtime:ro
+    - /tmp/.X11-unix:/tmp/.X11-unix
