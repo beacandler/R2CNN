@@ -27,7 +27,7 @@ class icdar(imdb):
         self._devkit_path = self._get_default_path() if devkit_path is None \
                             else devkit_path
         self._data_path = os.path.join(self._devkit_path, 'ICDAR' + self._year)
-        # self._data_path = self._devkit_path
+        self._data_path = self._devkit_path
         self._classes = ('__background__', # always index 0
                          'text')
         self._class_to_ind = dict(zip(self.classes, xrange(self.num_classes)))
@@ -68,8 +68,8 @@ class icdar(imdb):
             suffix = index.strip().split('/')[-1]
             image_path = os.path.join(self._data_path, prefix, 'JPEGImages',
                                       suffix + self._image_ext)
-            image_path = os.path.join(self._data_path, prefix,
-                                      suffix + self._image_ext)
+            # image_path = os.path.join(self._data_path, prefix,
+            #                           suffix + self._image_ext)
             # image_path = os.path.join(self._data_path, 'JPEGImages',prefix,
             #                           suffix + self._image_ext)
         else:
@@ -103,7 +103,7 @@ class icdar(imdb):
         # self._devkit_path + /VOCdevkit2007/VOC2007/ImageSets/Main/val.txt
         image_set_file = os.path.join(self._data_path, 'ImageSets', 'Main',
                                       self._image_set + '.txt')
-        # image_set_file = os.path.join(self._data_path, 'merge_train.txt')
+        image_set_file = os.path.join(self._data_path, 'merge_train.txt')
         assert os.path.exists(image_set_file), \
                 'Path does not exist: {}'.format(image_set_file)
         with open(image_set_file) as f:
