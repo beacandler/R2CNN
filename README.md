@@ -121,7 +121,7 @@ It is recommended to use UNIX socket to support GUI for docker, plesase open ano
 
 ### Train commands
 1. Go to ./src/lib/datasets/icdar.py, modify images path to let train.py find merge_train.txt images list.
-2. Remove cache in src/data/*.pkl or you can load cached [roidb data](https://pan.baidu.com/disk/home?errno=0&errmsg=Auth%20Login%20Sucess&&bduss=&ssnerror=0&traceid=#list/vmode=list&path=%2FRRCNN%2Fcache_roidb_data) of this project, and place it to src/data/
+2. Remove cache in src/data/*.pkl or you can load cached [roidb data](https://pan.baidu.com/s/1Pok-AYU0Jl-DNKrSqF3vNg#list/path=%2FRRCNN%2Fcache_roidb_data&parentPath=%2F) of this project, and place it to src/data/
 3. 
 ```bash
     # Train for RRCNN4-TextBoxes-v2-OHEM
